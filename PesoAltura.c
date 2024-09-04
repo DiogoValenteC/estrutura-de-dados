@@ -1,26 +1,23 @@
 #include <stdio.h>
+#include <malloc.h>
 
-typedef struct {
-    int peso;  // Peso em quilograma
-    int altura;   // Altura em centimetros
-
+typedef struct{
+    int peso;   // peso em quilogramas
+    int altura; // altura em centimetros
 } PesoAltura;
-    
-typedef int CHAVE;
 
 int main() {
-    PesoAltura pessoa;
-    pessoa.peso = 95;
-    pessoa.altura = 180;
-    printf(" peso: %i\n altura: %i\n", pessoa.peso, pessoa.altura);
-
-    if (pessoa.altura > 110) {
-        printf("pode se divertir\n");
-    } else {
-        printf("desculpe, mas você não pode passar\n");
-    }
-
     
+    PesoAltura *pessoa1;
+    pessoa1 = (PesoAltura *) malloc(sizeof(PesoAltura));
+    pessoa1->peso = 80;
+    pessoa1->altura = 185; 
+
+    printf("peso %i", pessoa1->peso);
+    printf("\n");
+    printf("altura %i", pessoa1->altura);
+    printf("\n");
+
 
     return 0;
 }
